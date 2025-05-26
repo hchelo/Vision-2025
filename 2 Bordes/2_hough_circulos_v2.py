@@ -11,12 +11,10 @@ imagen_reducida = cv2.resize(imagen, (0, 0), fx=0.5, fy=0.5)
 imagen_gris = cv2.cvtColor(imagen_reducida, cv2.COLOR_BGR2GRAY)
 
 # Aplicar un desenfoque para reducir el ruido
-imagen_gris = cv2.GaussianBlur(imagen_gris, (9, 9), 2)
-grad_x = cv2.Sobel(imagen_reducida, cv2.CV_64F, 1, 0, ksize=3)
-grad_y = cv2.Sobel(imagen_reducida, cv2.CV_64F, 0, 1, ksize=3)
-
-# Magnitud del gradiente
-imagen_gris = cv2.magnitude(grad_x, grad_y)
+grad_x = cv2.Sobel(imagen_gris, cv2.CV_64F, 1, 0, ksize=3)
+grad_y = cv2.Sobel(imagen_gris, cv2.CV_64F, 0, 1, ksize=3)
+magnitud = cv2.magnitude(grad_x, grad_y)
+imagen_gris = cv2.convertScaleAbs(magnitud)  # convertir a 8 bits para HoughCircles
 
 
 
@@ -26,10 +24,10 @@ circulos = cv2.HoughCircles(
     cv2.HOUGH_GRADIENT,
     dp=1,  # Inverso de la resolución del acumulador
     minDist=20,  # Distancia mínima entre los centros de los círculos detectados
-    param1=50,  # Umbral para el detector de bordes (Canny)
-    param2=50,  # Umbral para el acumulador (detección de círculos)
+    param1=60,  # Umbral para el detector de bordes (Canny)
+    param2=40,  # Umbral para el acumulador (detección de círculos)
     minRadius=10,  # Radio mínimo del círculo
-    maxRadius=50   # Radio máximo del círculo
+    maxRadius=30   # Radio máximo del círculo
 )
 
 # Dibujar los círculos detectados en la imagen reducida
@@ -46,6 +44,6 @@ if circulos is not None:
 combinada = np.hstack((imagen_reducida, imagen_circulos))
 
 # Mostrar el resultado
-cv2.imshow("Original y con Círculos Detectados", combinada)
+cv2.imshow("Original y con Circulos Detectados", combinada)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

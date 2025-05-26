@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Leer la imagen
-img = cv2.imread('yale1.bmp')
+img = cv2.imread('yale4.bmp')
 
 # Convertir a escala de grises
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -12,7 +12,7 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 smooth = cv2.GaussianBlur(gray, (95, 95), 0)
 
 # Dividir la imagen en escala de grises por la suavizada
-division = cv2.divide(gray, smooth, scale=192)
+division = cv2.divide(gray, smooth, scale=190)
 
 # Crear una figura para mostrar las imágenes y sus histogramas
 fig, axes = plt.subplots(2, 2, figsize=(10, 8))

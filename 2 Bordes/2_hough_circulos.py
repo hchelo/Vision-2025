@@ -39,6 +39,6 @@ if circulos is not None:
 combinada = np.hstack((imagen_reducida, imagen_circulos))
 
 # Mostrar el resultado
-cv2.imshow("Original y con Círculos Detectados", combinada)
+cv2.imshow("Original y con Circulos Detectados", combinada)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

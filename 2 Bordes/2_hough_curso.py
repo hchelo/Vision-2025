@@ -14,7 +14,7 @@ imagen_gris = cv2.cvtColor(imagen_reducida, cv2.COLOR_BGR2GRAY)
 bordes = cv2.Canny(imagen_gris, 50, 150)
 
 # Aplicar la Transformada de Hough Probabilística para detectar líneas
-lineas = cv2.HoughLinesP(bordes, rho=1, theta=np.pi/180, threshold=100, minLineLength=50, maxLineGap=10)
+lineas = cv2.HoughLinesP(bordes, rho=0.1, theta=np.pi/180, threshold=100, minLineLength=50, maxLineGap=10)
 
 # Dibujar las líneas detectadas en la imagen reducida
 imagen_filtrada = imagen_reducida.copy()

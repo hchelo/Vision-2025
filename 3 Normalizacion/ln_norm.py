@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-def local_normalization(image, window_size=5, epsilon=3):
+def local_normalization(image, window_size=5, epsilon=1):
 
     # Convertir la imagen a flotante para cálculos precisos
     image_float = image.astype(np.float32)
@@ -23,7 +23,7 @@ def local_normalization(image, window_size=5, epsilon=3):
     return normalized_image.astype(np.uint8)
 
 # Cargar la imagen en escala de grises
-image_path = "yale1.bmp"  # Cambia esta ruta por la de tu imagen
+image_path = "uno.jpg"  # Cambia esta ruta por la de tu imagen
 image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 
 if image is None:
