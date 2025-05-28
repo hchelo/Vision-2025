@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Cargar la imagen en escala de grises
-image = cv2.imread("img_morfo/dactilar.jpg", cv2.IMREAD_GRAYSCALE)
+image = cv2.imread("dactilar.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Binarización de la imagen
 _, binary_image = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)

@@ -1,0 +1,2 @@
+Media de los canales R, G, B: [ 29.71164904 103.57966982 236.2508811 ]
+Desviación estándar de los canales R, G, B: [30.30998343 46.16867113 16.19780795]

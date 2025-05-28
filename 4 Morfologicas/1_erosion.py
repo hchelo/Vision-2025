@@ -6,15 +6,16 @@ import matplotlib.pyplot as plt
 image = cv2.imread("hombre.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Crear un kernel para la erosión
-kernel = np.ones((3, 3), np.uint8)  # Kernel de 5x5 de unos
-"""
+#kernel = np.ones((3, 3), np.uint8)  # Kernel de 5x5 de unos
+#print(kernel)
+
 kernel = np.array([[0, 1, 0],
                          [1, 1, 1],
                          [0, 1, 0]], dtype=np.uint8)
 print(kernel)
-"""
+
 # Aplicar erosión
-eroded_image = cv2.erode(image, kernel, iterations=2)
+eroded_image = cv2.erode(image, kernel, iterations=1)
 
 # Mostrar la imagen original y la imagen erosionada
 plt.figure(figsize=(10, 5))
