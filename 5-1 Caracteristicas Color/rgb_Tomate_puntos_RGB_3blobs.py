@@ -40,10 +40,11 @@ def guardar_blob():
             for rgb in no_0_255:
                 f.write(f'{rgb[0]}, {rgb[1]}, {rgb[2]}\n')
 
-        print(f"Se han guardado {len(no_0_255)} valores RGB únicos en el archivo 'valores_rgb_unicos.txt'.")
+        print(f"Se han guardado {len(no_0_255)} valores RGB unicos en el archivo 'valores_rgb_unicos.txt'.")
 
 # Función para manejar la selección de puntos con el mouse
 def seleccionar_puntos(event, x, y, flags, param):
+    
     global puntos, blob_count
 
     if event == cv2.EVENT_LBUTTONDOWN:

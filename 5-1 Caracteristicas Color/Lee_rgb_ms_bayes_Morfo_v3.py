@@ -48,7 +48,7 @@ Sk_1 = np.sum(dif_pixel_media @ inversa_1 * dif_pixel_media, axis=1)
 Pk_1 = constante_Pk_1 * np.exp(-Sk_1 / 2)
 
 # Umbral para la segmentación
-umbral = 0.00000005
+umbral = 0.0000002
 
 # Filtrar los píxeles según el valor de Pk_1
 new_RGB_flat = np.zeros_like(imagen_rgb_float, dtype=np.uint8)
@@ -71,11 +71,11 @@ kernel_diamante = np.array([[0, 0, 1, 0, 0],
 # Aplicar erosión con el kernel en forma de diamante
 imagen_erosionada = cv2.erode(new_RGB_gray, kernel_diamante, iterations=1)
 
-imagen_dilatada = cv2.dilate(imagen_erosionada, kernel_diamante, iterations=2)
+imagen_dilatada = cv2.dilate(imagen_erosionada, kernel_diamante, iterations=4)
 
 
 # Crear un kernel cuadrado (7x7) para la operación de cierre
-kernel_cierre = np.ones((7, 7), np.uint8)
+kernel_cierre = np.ones((47, 47), np.uint8)
 
 # Aplicar cierre (dilatación seguida de erosión)
 imagen_final = cv2.morphologyEx(imagen_dilatada, cv2.MORPH_CLOSE, kernel_cierre)
