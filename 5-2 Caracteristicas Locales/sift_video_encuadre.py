@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 
 # Cargar la imagen y convertirla a escala de grises
-img = cv2.imread('fanta.jpg')
-factor_de_escala = 0.3
+img = cv2.imread('cocacola.jpg')
+factor_de_escala = 0.85
 ancho_nuevo = int(img.shape[1] * factor_de_escala)
 alto_nuevo = int(img.shape[0] * factor_de_escala)
 img = cv2.resize(img, (ancho_nuevo, alto_nuevo), interpolation=cv2.INTER_AREA)
@@ -16,7 +16,7 @@ sift = cv2.SIFT_create()
 kp_img, des_img = sift.detectAndCompute(gray_img, None)
 
 # Crear objeto VideoCapture
-cap = cv2.VideoCapture('fanta3.mp4')
+cap = cv2.VideoCapture('cocacola.mp4')
 
 # Matcher
 bf = cv2.BFMatcher()
@@ -37,7 +37,7 @@ while True:
     # Ratio test de Lowe
     good_matches = []
     for m, n in matches:
-        if m.distance < 0.85 * n.distance:
+        if m.distance < 0.95 * n.distance:
             good_matches.append(m)
 
     if len(good_matches) > 10:
