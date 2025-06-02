@@ -32,6 +32,6 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
         print("No se detectaron personas.")
 
 # Mostrar la imagen con los puntos clave detectados
-cv2.imshow("Detección de Persona", image)
+cv2.imshow("Deteccion de Persona", image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

@@ -45,7 +45,7 @@ def visualize(image: np.ndarray, detection_result) -> np.ndarray:
 image_path = "city.jpg"
 original_image = cv2.imread(image_path)
 if original_image is None:
-    raise FileNotFoundError(f"No se encontró la imagen en la ruta: {image_path}")
+    raise FileNotFoundError(f"No se encontro la imagen en la ruta: {image_path}")
 
 # Convertir a formato RGB para MediaPipe
 rgb_image = cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)

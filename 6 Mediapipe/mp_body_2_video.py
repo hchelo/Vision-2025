@@ -41,7 +41,7 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
                 landmark_drawing_spec=landmark_styles, connection_drawing_spec=drawing_styles)
 
         # Muestra el fotograma con los puntos clave detectados
-        cv2.imshow("Detección de Persona", frame)
+        cv2.imshow("Deteccion de Persona", frame)
 
         # Si presionas 'q', se detendrá la ejecución del video
         if cv2.waitKey(1) & 0xFF == ord('q'):
