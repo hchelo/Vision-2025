@@ -42,7 +42,7 @@ def visualize(image: np.ndarray, detection_result) -> np.ndarray:
     return image
 
 # Cargar imagen
-image_path = "city.jpg"
+image_path = "personas.png"
 original_image = cv2.imread(image_path)
 if original_image is None:
     raise FileNotFoundError(f"No se encontró la imagen en la ruta: {image_path}")

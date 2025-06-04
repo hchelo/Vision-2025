@@ -7,7 +7,7 @@ mp_selfie_segmentation = mp.solutions.selfie_segmentation
 segmentation = mp_selfie_segmentation.SelfieSegmentation(model_selection=1)
 
 # Cargar la imagen
-input_image = cv2.imread("person2.jpg")
+input_image = cv2.imread("xima_d.png")
 
 # Convertir imagen de BGR a RGB
 rgb_image = cv2.cvtColor(input_image, cv2.COLOR_BGR2RGB)

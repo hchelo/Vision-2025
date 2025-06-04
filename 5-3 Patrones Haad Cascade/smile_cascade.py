@@ -5,7 +5,7 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_fronta
 smile_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_smile.xml')
 
 # Leer imagen
-image_path = "cara_verde.png"  # Cambia por la ruta de tu imagen
+image_path = "3views.jpg"  # Cambia por la ruta de tu imagen
 image = cv2.imread(image_path)
 
 if image is None:
@@ -25,7 +25,7 @@ for (x, y, w, h) in faces:
     smiles = smile_cascade.detectMultiScale(
         face_gray,
         scaleFactor=1.8,
-        minNeighbors=5
+        minNeighbors=6
     )
 
     if len(smiles) > 0:
