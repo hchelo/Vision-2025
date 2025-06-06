@@ -14,9 +14,9 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 # Configuración
 image_size = (160, 160)  # MobileNetV2 espera 160x160 o más
 num_classes = 2
-dataset_dir = 'horse-or-human'
-horses_dir = os.path.join(dataset_dir, 'horses')
-humans_dir = os.path.join(dataset_dir, 'humans')
+dataset_dir = 'pesados'
+horses_dir = os.path.join(dataset_dir, 'camiones')
+humans_dir = os.path.join(dataset_dir, 'pickup')
 
 # Cargar imágenes y etiquetas
 def load_images_from_directory(directory, label, image_size):

@@ -170,8 +170,8 @@ def predict_image(image_path, model, device):
 test_images = [
     ('BD_New_DKC/testing_dkc/0/izq0117.png', 0),
     ('BD_New_DKC/testing_dkc/0/izq0147.png', 0),
-    ('BD_New_DKC/testing_dkc/1/semizq 0117.png', 0),
-    ('BD_New_DKC/testing_dkc/1/semizq 0136.png', 0),
+    ('BD_New_DKC/testing_dkc/1/semizq 0117.png', 1),
+    ('BD_New_DKC/testing_dkc/1/semizq 0136.png', 1),
     ('BD_New_DKC/testing_dkc/2/adelante0081.png', 2),
     ('BD_New_DKC/testing_dkc/2/adelante0099.png', 2),
     ('BD_New_DKC/testing_dkc/3/semder0072.png', 3),

@@ -14,9 +14,9 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, roc_curve,
 # Configuración
 image_size = (160, 160)
 num_classes = 2
-dataset_dir = 'horse-or-human'
-horses_dir = os.path.join(dataset_dir, 'horses')
-humans_dir = os.path.join(dataset_dir, 'humans')
+dataset_dir = 'pesados'
+horses_dir = os.path.join(dataset_dir, 'camiones')
+humans_dir = os.path.join(dataset_dir, 'pickup')
 
 # Función para cargar imágenes
 def load_images_from_directory(directory, label, image_size):
