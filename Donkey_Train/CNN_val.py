@@ -74,5 +74,5 @@ for class_folder in sorted(os.listdir(root_dir)):
 
         plt.title(f"Esperada: {expected_label} | Predicha: {predicted_label}\n{prob_str}", fontsize=10)
         plt.tight_layout()
-        plt.pause(1.5)
+        plt.pause(0.05)
         plt.clf()

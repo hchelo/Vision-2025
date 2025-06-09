@@ -121,7 +121,7 @@ def validate_model(model, test_loader, criterion, device):
     return epoch_loss, epoch_acc
 
 # Entrenamiento y validación del modelo
-num_epochs = 1000
+num_epochs = 100
 print("Entrenando el modelo...")
 start_time = time.time()
 
@@ -136,7 +136,7 @@ for epoch in range(num_epochs):
     if val_loss < best_val_loss:
         best_val_loss = val_loss
         epochs_no_improve = 0
-        torch.save(model.state_dict(), 'best_model.pth')
+        torch.save(model.state_dict(), 'best_modelito.pth')
     else:
         epochs_no_improve += 1
         if epochs_no_improve == early_stopping_patience:

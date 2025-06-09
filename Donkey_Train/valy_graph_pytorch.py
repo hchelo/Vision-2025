@@ -17,7 +17,7 @@ num_features = model.classifier[6].in_features
 model.classifier[6] = torch.nn.Linear(num_features, 5)
 
 # Cargar pesos entrenados por el usuario
-model.load_state_dict(torch.load('best_model.pth', map_location=device))
+model.load_state_dict(torch.load('best_modelito.pth', map_location=device))
 model = model.to(device)
 model.eval()
 

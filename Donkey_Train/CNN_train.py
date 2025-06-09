@@ -66,7 +66,7 @@ train_datagen = ImageDataGenerator(
     height_shift_range=0.2,
     shear_range=0.15,
     zoom_range=0.3,
-    horizontal_flip=True,
+    #horizontal_flip=True,
     fill_mode='nearest'
 )
 
@@ -112,8 +112,8 @@ print(f"Tiempo total de entrenamiento: {end_time - start_time:.2f} segundos.")
 target_dir = './modelo/'
 if not os.path.exists(target_dir):
     os.mkdir(target_dir)
-model.save(os.path.join(target_dir, 'modelo1_dc.h5'))
-model.save_weights(os.path.join(target_dir, 'pesos1_dc.h5'))
+model.save(os.path.join(target_dir, 'modelo1_VC.h5'))
+model.save_weights(os.path.join(target_dir, 'pesos1_VC.h5'))
 
 # Función para predecir una sola imagen
 def predict_image(image_path):
